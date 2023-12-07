@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Franco Giuffrida - Asistente Virtual</title>
+
+  <meta content="7 day" name="revisit-after" />
+  <meta name="author" content="Franco Giuffrida" />
+  <meta name="copyright" content="" />
+  <meta name="robots" content="index follow" />
+  <meta name="keywords"
+    content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- FAVICON -->
+  <!-- <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff"> -->
+
+  <!-- <link href="css/fancybox.min.css" rel="stylesheet"> -->
+  <!-- <link href="css/site.css" rel="stylesheet" type="text/css" /> -->
+  <link href="css/tailwind.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="js/fontawesome.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <!-- <script type="text/javascript" src="js/fancybox.min.js"></script> -->
+  <script type="text/javascript" src="js/tailwindcss.js"></script>
+  <script type="text/javascript" src="js/widgets/jQuery-Form-Validator-master/form-validator/jquery.form-validator.min.js"></script>
+  <!-- <script type="text/javascript" src="js/tailwind.config.js"></script> -->
+</head>
+
+<body style="overflow-x: hidden;">
+  <div id="layerLoad" class="layer_cargando">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+    <div class="title_loading">Estamos procesando su pedido.</div>
+    <div class="text_loading">Este proceso podr&iacute;a tardar unos minutos, por favor aguarde y no cierre ni actualice el navegador.
+    </div>
+  </div>
+  <div>
+    <!-- WHATHS APP FIXED -->
+    <a href="https://api.whatsapp.com/send?phone=+34604157237" class="flex justify-center items-center fixed bottom-4 right-4 w-16 h-16 rounded-full bg-green-500 z-10" target="_blank">
+      <i class="fab fa-whatsapp text-white text-4xl"></i>
+    </a>
+    <!-- HEADER -->
+    <nav class="top-3 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-0 navbar-expand-lg" id="nav">
+      <div class="container px-4 mx-auto flex flex-wrap items-center justify-between" id="header">
+        <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+          <button
+            class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            type="button" onclick="$('#navbar').toggleClass('hidden')">
+            <i class="text-white fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none hidden" id="navbar">
+          <ul class="flex flex-col lg:flex-row list-none mr-auto">
+            <li class="flex flex-col lg:flex-row lg:items-center">
+
+              <a class="lg:text-white lg:hover:text-gray-200 text-gray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="#servicios">
+                <!-- <i class="lg:text-gray-200 text-gray-400 far fa-file-alt text-lg leading-lg mr-2"></i> -->
+                Servicios
+              </a>
+
+              <a class="lg:text-white lg:hover:text-gray-200 text-gray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="#contacto">
+                <!-- <i class="lg:text-gray-200 text-gray-400 far fa-file-alt text-lg leading-lg mr-2"></i> -->
+                Contacto
+              </a>
+
+            </li>
+          </ul>
+          <ul class="flex lg:flex-row list-none lg:ml-auto">
+            <!-- <li class="flex items-center">
+              <a class="lg:text-white lg:hover:text-gray-200 text-gray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="" target="_blank">
+                <i class="lg:text-white lg:hover:text-gray-200 text-gray-700 fab fa-facebook text-lg leading-lg"></i>
+              </a>
+            </li>
+
+            <li class="flex items-center">
+              <a class="lg:text-white lg:hover:text-gray-200 text-gray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="" target="_blank">
+                <i class="lg:text-white lg:hover:text-gray-200 text-gray-700 fab fa-twitter text-lg leading-lg"></i>
+              </a>
+            </li>
+
+            <li class="flex items-center">
+              <a class="lg:text-white lg:hover:text-gray-200 text-gray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                href="" target="_blank">
+                <i class="lg:text-white lg:hover:text-gray-200 text-gray-700 fab fa-linkedin text-lg leading-lg"></i>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- HOME -->
+    <main>
+      <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+                    background-image: url('images/bg_main/pexels-fauxels-3184465.jpg');
+                  ">
+          <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
+        </div>
+        <div class="container relative mx-auto">
+          <div class="items-center flex flex-wrap lg:my-32">
+            <div class="flex flex-col items-center w-full lg:w-3/4 px-4 ml-auto mr-auto text-center">
+
+              <h2 class="mb-10 text-white font-semibold text-2xl lg:text-6xl">
+                FRANCO GIUFFRIDA
+              </h2>
+
+              <h2 class="text-white font-semibold text-xl lg:text-4xl">
+                Asistente Virtual
+              </h2>
+              <!-- <p class="mt-4 text-lg text-gray-200">
+                            Asesoramiento externo en consultor&iacute;a organizacional <br>
+                            especializada en sociedades.
+                        </p> -->
+
+            </div>
+          </div>
+        </div>
+        <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+          style="transform: translateZ(0);">
+          <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+            <polygon class="text-gray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </div>
+
+      <section class="pb-20 bg-gray-200 -mt-24">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-center">
+            <div class="lg:w-3/4 w-full lg:px-4 text-center">
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                <div class="px-10 py-12 flex-auto">
+                  <p class="mt-2 mb-4 text-gray-500 text-2xl">
+                    ¡Hola y bienvenido! Estoy aqu&iacute; para hacer que tu trabajo mas sensillo. Ya sea que se trate de administrar tu agenda, atender consultas de clientes o mantener todo organizado, lo tengo cubierto. ¡Hagamos juntos que tu viaje digital sea eficiente y agradable!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="text-4xl text-black font-semibold w-full mb-20 ml-10 mt-20">Soy Franco Giuffrida, Asistente Virtual!</h2>
+
+        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+          style="transform: translateZ(0);">
+          <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+            <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap">
+
+            <div class="w-full px-6 lg:w-1/3 lg:px-0 mb-5">
+              <div class="p-8">
+                <h3 class="text-3xl text-gray-800 font-semibold mb-6">Lo que ofrezco</h3>
+                <div class="text-gray-500 mb-4 text-2xl">Como asistente virtual con base en Alicante, estoy aqu&iacute; para brindarte servicios de primer nivel. Ya sea que necesite ayuda con tareas administrativas, administrar su agenda u organizar sus correos electr&oacute;nicos, lo tengo cubierto.</div>
+              </div>
+            </div>
+  
+            <div class="w-full px-6 lg:w-1/3 lg:px-0 mb-5">
+              <div class="p-8">
+                <h3 class="text-3xl text-gray-800 font-semibold mb-6">&iquest;Por qu&eacute; elegirme?</h3>
+                <div class="text-gray-500 mb-4 text-2xl">Con a&ntilde;os de experiencia y pasi&oacute;n por la eficiencia, le garantizo que sus tareas se completar&aacute;n con precisi&oacute;n y a tiempo. D&eacute;jame a m&iacute; el estr&eacute;s de administrar tu carga de trabajo, para que puedas concentrarte en lo que realmente importa en tu negocio.</div>
+              </div>
+            </div>
+  
+            <div class="w-full px-6 lg:w-1/3 lg:px-0 mb-5">
+              <div class="p-8">
+                <h3 class="text-3xl text-gray-800 font-semibold mb-6">Trabajemos juntos</h3>
+                <div class="text-gray-500 mb-4 text-2xl">&iquest;Listo para llevar su productividad al siguiente nivel? P&oacute;ngase en contacto conmigo hoy y analicemos c&oacute;mo puedo ayudarle a alcanzar sus objetivos. Ya sea que necesite apoyo ocasional o asistencia a largo plazo, me comprometo a brindarle un servicio excepcional.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+          <!-- SECCION SERVICIOS -->
+          
+      </section>
+      <section class="relative py-32">
+        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+          style="transform: translateZ(0);">
+          <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+            <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+
+        <div class="" id="servicios">
+          <div class="w-full lg:px-4 mb-24">
+            <div class="lg:w-5/6 w-full bg-white lg:p-6 py-6 px-2 rounded-lg mx-auto">
+              <h3 class="text-4xl font-semibold leading-normal mt-8 mb-16 w-full text-center">
+                Servicios
+              </h3>
+              <div class="flex justify-around flex-wrap w-full">
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-teal-800 to-teal-600">
+                  <div class="font-medium group-hover:-translate-y-20 transition-all text-white">Gesti&oacute;n de la agenda y el calendario</div>
+                  <div class="text-gray-200 absolute -bottom-20 group-hover:bottom-20 transition-all w-60">Organizo tus compromisos y eventos, asegurando una agenda eficiente.</div>
+                </div>
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-cyan-800 to-cyan-600">
+                  <div class="font-medium group-hover:-translate-y-20 transition-all text-white">Atenci&oacute;n al cliente</div>
+                  <div class="text-gray-200 absolute -bottom-32 group-hover:bottom-10 transition-all w-60">Brindo un servicio cordial y profesional, gestionando consultas y preocupaciones para mantener a tus clientes satisfechos.</div>
+                </div>
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-sky-800 to-sky-600">
+                  <div class="font-medium group-hover:-translate-y-20 transition-all text-white">Organizaci&oacute;n y gesti&oacute;n de documentos</div>
+                  <div class="text-gray-200 absolute -bottom-40 group-hover:bottom-6 transition-all w-60">Mantengo tus archivos ordenados y accesibles, facilitando la recuperaci&oacute;n de informaci&oacute;n vital en cualquier momento.</div>
+                </div>
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-blue-800 to-blue-600">
+                  <div class="font-medium group-hover:-translate-y-12 transition-all text-white">Investigaci&oacute;n y recopilaci&oacute;n de datos</div>
+                  <div class="text-gray-200 absolute -bottom-32 group-hover:bottom-10 transition-all w-60">Realizo investigaciones exhaustivas para proporcionarte datos clave que respalden la toma de decisiones informadas.</div>
+                </div>
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-indigo-800 to-indigo-600">
+                  <div class="font-medium group-hover:-translate-y-20 transition-all text-white">Gesti&oacute;n de correo electr&oacute;nico y comunicaciones</div>
+                  <div class="text-gray-200 absolute -bottom-44 group-hover:bottom-6 transition-all w-60">Manejo eficazmente tu bandeja de entrada, priorizando y respondiendo correos para mantener una comunicaci&oacute;n fluida.</div>
+                </div>
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-violet-800 to-violet-600">
+                  <div class="font-medium group-hover:-translate-y-16 transition-all text-white">Soporte en redes sociales</div>
+                  <div class="text-gray-200 absolute -bottom-32 group-hover:bottom-6 transition-all w-60">Potencio tu presencia en redes sociales, interactuando con tu audiencia y gestionando publicaciones para fortalecer la conexi&oacute;n con tus seguidores.</div>
+                </div>
+
+                <div class="group relative overflow-hidden flex flex-col justify-center items-center w-80 h-72  rounded-md lg:m-5 my-5 p-5 text-center bg-gradient-to-r from-fuchsia-800 to-fuchsia-600">
+                  <div class="font-medium group-hover:-translate-y-12 transition-all text-white">Soporte con tu sitio web</div>
+                  <div class="text-gray-200 absolute -bottom-32 group-hover:bottom-12 transition-all w-60">Mantengo tu sitio web actualizado y funcional, asegurando una experiencia &oacute;ptima para los visitantes.</div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="pb-20 relative block bg-teal-800" id="contacto">
+        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+          style="transform: translateZ(0);">
+          <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+            version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+            <polygon class="text-teal-800 fill-current" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+
+        <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
+
+          <div class="flex flex-wrap text-center justify-center">
+            <div class="w-full lg:w-6/12 px-4">
+              <h2 class="text-4xl font-semibold text-white">
+                Hola, &#191;c&oacute;mo puedo ayudarte?
+              </h2>
+              <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-400">
+                &#191;Tienes alguna pregunta o quieres informarte sobre mis servicios? Te ayudo.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap mt-12 justify-center">
+
+            <div class="w-full lg:w-1/4 px-4 text-center mb-10 lg:mb-0">
+              <div
+                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+                <i class="fas fa-mobile-alt text-xl"></i>
+              </div>
+              <h6 class="text-xl mt-5 font-semibold text-white">
+                <a href="tel:+34604157237">+34 604-157237</a>
+              </h6>
+            </div>
+
+            <div class="w-full lg:w-1/4 px-4 text-center mb-10 lg:mb-0">
+              <div
+                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+                <i class="fab fa-whatsapp text-xl"></i>
+              </div>
+              <h5 class="text-xl mt-5 font-semibold text-white">
+                <a href="https://api.whatsapp.com/send?phone=+34604157237" target="_blank">+34 604-157237</a>
+              </h5>
+            </div>
+
+            <div class="w-full lg:w-1/4 px-4 text-center mb-10 lg:mb-0">
+              <div
+                class="text-gray-800 p-3 w-12 h-12 shadow-lg rounded-full bg-white inline-flex items-center justify-center">
+                <i class="far fa-envelope text-xl"></i>
+              </div>
+              <h5 class="text-xl mt-5 font-semibold text-white">
+                <a href="mailto:fsgiuffrida@gmail.com" target="_blank">fsgiuffrida@gmail.com</a>
+              </h5>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <section class="relative block py-24 lg:pt-0 bg-teal-800">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap justify-center lg:-mt-64 -mt-48">
+            <div class="w-full lg:w-6/12 px-4">
+              <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200">
+                <div class="flex-auto p-5 lg:p-10">
+                  <h4 class="text-2xl font-semibold">
+                    &iquest;Ten&eacute;s alguna consulta?
+                  </h4>
+                  <p class="leading-relaxed mt-1 mb-4 text-gray-500">
+                    Complet&aacute; el formulario y te respondo a la brevedad.
+                  </p>
+                  <form name="formContacto" id="formContacto">
+                    <input type="hidden" name="action" value="send">
+                    <div class="relative w-full mb-3 mt-8">
+                      <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlFor="full-name">
+                        Nombre y apellido
+                      </label>
+                      <input type="text"
+                        class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        placeholder="Nombre y apellido" name="nombre" />
+                    </div>
+  
+                    <div class="relative w-full mb-3">
+                      <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlFor="email">
+                        Email
+                      </label>
+                      <input type="email"
+                        class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        placeholder="Email" name="mail" />
+                    </div>
+  
+                    <div class="relative w-full mb-3">
+                      <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlFor="message">
+                        Mensaje
+                      </label>
+                      <textarea rows="4" cols="80"
+                        class="border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        placeholder="Escriba un mensaje..." name="comentario"></textarea>
+                    </div>
+                    <div class="text-center mt-6">
+                      <div
+                        class="flex justify-center items-center bg-gray-800 text-white active:bg-gray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 cursor-pointer"
+                        onclick="enviarForm('formContacto');">
+                        Enviar
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <div class="w-full relative py-12 bg-gray-800">
+                <iframe class="max-w-full block my-0 mx-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1675.7486252789838!2d-60.70347877399184!3d-32.85856068432359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b653df311552d5%3A0xcb86c1be1f9586f2!2sGeriatrico%20Vivir!5e0!3m2!1ses!2sar!4v1645638980162!5m2!1ses!2sar" width="1170" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div> -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative bg-gray-200 pt-8 pb-6">
+      <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+        style="transform: translateZ(0);">
+        <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+          version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+          <polygon class="text-gray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap text-center lg:text-left">
+          <div class="w-full lg:w-6/12 px-4">
+            <!-- <h4 class="text-3xl font-semibold">Estamos en contacto!</h4>
+            <h5 class="text-lg mt-0 mb-2 text-gray-600">
+              Encuentranos en cualquiera de nuestras plataformas.
+            </h5> -->
+            <div class="mt-6 lg:mb-0 mb-6">
+              <!-- <button
+                class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button" onclick="window.open('https://www.twitter.com', '_blank');">
+                <i class="fab fa-twitter"></i>
+              </button>
+              <button
+                class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button" onclick="window.open('https://www.facebook.com', '_blank');">
+                <i class="fab fa-facebook-square"></i>
+              </button>
+              <button
+                class="bg-white text-purple-700 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button" onclick="window.open('https://www.instagram.com', '_blank');">
+                <i class="fab fa-instagram"></i>
+              </button>
+              <button
+                class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button" onclick="window.open('https://www.linkedin.com', '_blank');">
+                <i class="fab fa-linkedin"></i>
+              </button> -->
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="flex flex-wrap items-top mb-6">
+              <div class="w-full lg:w-4/12 px-4 ml-auto">
+                <span class="block uppercase text-gray-500 text-sm font-semibold mb-2">
+                  Institucional
+                </span>
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm" 
+                      href="#servicios">
+                      Servicios
+                    </a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm" 
+                      href="#contacto">
+                      Contacto
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full mt-6 lg:w-4/12 lg:mt-0 px-4">
+                <span class="block uppercase text-gray-500 text-sm font-semibold mb-2">
+                  Formas de contacto
+                </span>
+                <ul class="list-unstyled">
+                  <li class="flex justify-center lg:justify-start">
+                    <i class="fab fa-whatsapp w-4 mr-2"></i>
+                    <a class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                      href="https://api.whatsapp.com/send?phone=+34604157237" target="_blank">
+                      +34 604-157237
+                    </a>
+                  </li>
+                  <li class="flex justify-center lg:justify-start">
+                    <i class="fas fa-mobile-alt w-4 mr-2"></i>
+                    <a class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                      href="tel:+34604157237">
+                      +34 604-157237
+                    </a>
+                  </li>
+                  <li class="flex justify-center lg:justify-start">
+                    <i class="far fa-envelope w-4 mr-2"></i>
+                    <a class="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
+                      href="mailto:fsgiuffrida@gmail.com" target="_blank">
+                      fsgiuffrida@gmail.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-300" />
+        <div class="flex flex-wrap items-center md:justify-between justify-center">
+          <div class="w-full px-4 mx-auto text-center">
+            <div class="flex justify-center w-full items-center text-sm text-gray-500 font-semibold py-1">
+              Copyright &copy; 2024 Franco Giuffrida
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+<script>
+  $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function (event) {
+      // On-page links
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+        location.hostname == this.hostname
+      ) {
+        // Figure out element to scroll to
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+          // Only prevent default if animation is actually gonna happen
+          event.preventDefault();
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000, function () {});
+        }
+      }
+    });
+
+    // $(window).on('scroll', function() {
+		// 	if ($(window).scrollTop() >= 120) {
+		// 		$('#header').css('background', '#000');
+    //     $('#nav').css('top', '0');
+		// 	}else{
+		// 		$('#header').css('background', 'transparent');
+    //     $('#nav').css('top', '12px');
+		//   }
+		// });
+    
+    function enviarForm(idFrm){
+      if($("#"+idFrm).isValid({}, {}, true)) {
+        $('#layerLoad').css('display','block');
+        $.post("/form.php", $("#"+idFrm).serialize(), function(data) {
+          $('#layerLoad').css('display','none');
+          $('#layerMailOk').fadeIn('fast');
+          setTimeout(function(){$('#layerMailOk').fadeOut('fast');}, 4000);
+        });
+      }
+    }
+</script>
+
+</html>
